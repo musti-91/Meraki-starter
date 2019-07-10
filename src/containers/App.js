@@ -1,10 +1,17 @@
-import React from 'react'
+import React from "react"
+import { Provider } from "react-redux"
+
+import store from "../store/index"
+
+import UserContainer from "./UserContainer"
 
 const App = ({ name, isLoaded }) => {
-	return (
-		<div className="app">
-			React with Webpack from {name}-{isLoaded}
-		</div>
-	)
+  return (
+    <Provider store={store}>
+      <div className="app">
+        <UserContainer />
+      </div>
+    </Provider>
+  )
 }
 export default App

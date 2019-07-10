@@ -1,3 +1,5 @@
 {
-  "presets": ["env", "react"]
+  // TODO: change this to ["env", "react"] to run your application
+  // for now babel-loader has some proplems with enzyme, jest
+  "presets": ["@babel/env", "@babel/react"]
 }

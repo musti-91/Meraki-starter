@@ -72,6 +72,10 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
 			chunkFilename: '[id].css'
-		})
-	]
+		}),
+	],
+	externals: {
+		React: 'react',
+		ReactDOM: 'react-dom'
+	}
 }

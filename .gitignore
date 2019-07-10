@@ -6,3 +6,8 @@ dist/
 yann-lock.json
 package-lock.json
 yarn-error.log
+#  testing
+.coverage/
+coverage/
+snapshot/
+__snapshots__/
