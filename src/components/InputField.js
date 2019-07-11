@@ -1,4 +1,3 @@
-// @flow
 // @ts-check
 import React from "react"
 import PropTypes from "prop-types"
@@ -13,3 +12,5 @@ InputField.propsTypes = {
 InputField.defaultProps = {
   label: "Example input for testing"
 }
+
+export default InputField
