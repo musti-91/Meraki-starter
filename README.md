@@ -8,6 +8,8 @@
 - Webpack
 - Storybook
 - Jest-enzyme
+- Redux
+-
 
 ## install
 
@@ -15,10 +17,18 @@
 
 ## Start
 
-`npm start`
+`npm start:dev`
 
 ## Build
 
 `npm run build`
 
+## Storybook
+
+`npm run storybook`
+
+## Test
+
+`npm run test`
+`npm run test:w`
 license: @Mustafa Alroomi

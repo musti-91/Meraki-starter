@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 
 import { fetching, fetchingError, fetchingSuccess } from "../store/actions"
 import List from "../components/List"
+
+const fetch = require("node-fetch")
 /**
  * @author
  * @function UserContanier
@@ -12,24 +14,28 @@ import List from "../components/List"
 const UserContanier = ({ users, fetchingError, startFetching, getUsers, getError }) => {
   const [fetching, setFetching] = useState(true)
   useEffect(() => {
-    fetch("")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then(res => {
         startFetching()
         return res.json()
       })
       .then(res => {
-        fetchingSuccess(res)
+        getUsers(res)
         setFetching(false)
       })
       .catch(error => {
         getError(error)
         setFetching(false)
       })
-  })
+  }, [])
+
+  const onItemClicked = id => {
+    console.log(id)
+  }
   return (
     <div>
       {fetching && <div>Loading.....</div>}
-      {!fetching && users.length !== 0 && <List list={users} />}
+      {!fetching && users.length !== 0 && <List list={users} click={onItemClicked} />}
     </div>
   )
 }
