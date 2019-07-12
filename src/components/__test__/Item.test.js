@@ -1,7 +1,6 @@
 import React from "react"
 import { shallow, mount } from "enzyme"
 
-import toJson from "enzyme-to-json"
 import Item from "../Item"
 describe("Item", () => {
   const item = { id: 1, name: "Someone" }
@@ -14,7 +13,7 @@ describe("Item", () => {
     // ! because my component should wait until fetching happens from app component
     // ! and then will render this component so it's async
     //* if you want to try to remove done() and test what will happend
-    expect(toJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
     done()
   })
 

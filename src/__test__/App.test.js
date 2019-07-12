@@ -1,6 +1,5 @@
 import React from "react"
 import { mount, shallow } from "enzyme"
-import toJson from "enzyme-to-json"
 
 import App from "../containers/App"
 
@@ -17,6 +16,6 @@ describe("App", () => {
   })
 
   it("should match it's snapshot", () => {
-    expect(toJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

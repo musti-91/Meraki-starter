@@ -2,15 +2,13 @@ import React from "react"
 import { shallow, mount } from "enzyme"
 import InputField from "../InputField"
 
-import toJson from "enzyme-to-json"
-
 describe("InputField", () => {
   const change = jest.fn().mockName("onChange")
 
   const wrapper = shallow(<InputField onChange={change} />)
 
   it("should match its snapshot", () => {
-    expect(toJson(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
   it("should change item value of input", () => {

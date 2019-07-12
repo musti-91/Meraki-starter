@@ -12,3 +12,6 @@ export const fetchingError = error => ({
   type: ActionTypes.FETCHING_ERROR,
   error
 })
+export const changeLang = () => ({
+  type: ActionTypes.CHANGE_LANG
+})

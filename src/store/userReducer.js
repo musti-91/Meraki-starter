@@ -4,7 +4,9 @@ import { ActionTypes } from "./actionType"
 const INITIAL_STATE = {
   users: [],
   fetching: false,
-  fetchingError: false
+  fetchingError: false,
+  // lang
+  lang: "en"
 }
 
 export default function userReducer(state = INITIAL_STATE, action) {
@@ -18,6 +20,10 @@ export default function userReducer(state = INITIAL_STATE, action) {
     case ActionTypes.FETCHING_ERROR:
       state = { ...state, fetching: false, users: [], fetchingError: action.error }
       break
+    case ActionTypes.CHANGE_LANG:
+      state = { ...state, lang: state.lang == "en" ? "nl" : "en" }
+      break
+
     default:
       state = { ...state }
   }
