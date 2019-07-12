@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
-import { I18n } from "react-polyglot"
 import { fetching, fetchingError, fetchingSuccess, changeLang } from "../store/actions"
 import List from "../components/List"
 import messages from "../utils/messages"
+import LangProvider from "../components/LangProvider"
 const fetch = require("node-fetch")
 /**
  * @author
@@ -30,8 +30,9 @@ const UserContanier = ({ users, fetchingError, startFetching, getUsers, getError
   }, [])
 
   const onItemClicked = id => {
-    console.log(id)
+    // console.log(id)
   }
+
   const global_colors = {
     backgroundColor: lang == "nl" && "#A28B55",
     color: lang == "nl" && "white"
@@ -43,7 +44,7 @@ const UserContanier = ({ users, fetchingError, startFetching, getUsers, getError
   }
 
   return (
-    <I18n locale={lang} messages={messages[lang]}>
+    <LangProvider locale={lang} messages={messages[lang]}>
       <div>
         <button onClick={() => changeLanguage()} className="lang_btn" style={global_colors}>
           {lang == "en" ? lang : "nl"}
@@ -51,7 +52,7 @@ const UserContanier = ({ users, fetchingError, startFetching, getUsers, getError
         {fetching && <div>Loading.....</div>}
         {!fetching && users.length !== 0 && <List list={users} click={onItemClicked} theme={colors} />}
       </div>
-    </I18n>
+    </LangProvider>
   )
 }
 
@@ -85,6 +86,7 @@ const mapDispatchToProps = dispatch => ({
   // change language
   changeLanguage: () => dispatch(changeLang())
 })
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
