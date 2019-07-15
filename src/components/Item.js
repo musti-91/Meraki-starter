@@ -1,23 +1,30 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { translate } from "react-polyglot"
+/* jshint ignore:start */
+// @flow
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { translate } from "react-polyglot";
 
-import Fab from "@material-ui/core/Fab"
-import FilterList from "@material-ui/icons/FilterList"
+import Fab from "@material-ui/core/Fab";
+import FilterList from "@material-ui/icons/FilterList";
 /**
  * @author
  * @function Item
  **/
-
-const Item = ({ item, click, theme, t }) => {
-  const [resize, setResize] = useState(false)
+type Props = {
+  item: any,
+  click: (id: any) => any,
+  theme: any,
+  t: (key: any) => any
+};
+const Item = ({ item, click, theme, t }: Props) => {
+  const [resize, setResize] = useState(false);
   // TODO set animation for resize li
 
   const commonTheme = {
     ...theme,
     backgroundColor: resize ? "#cccddd" : theme.backgroundColor,
-    height: resize ? 300 : "inherit"
-  }
+    height: resize ? 500 : "inherit"
+  };
   return (
     <li className="item" onClick={() => click(item.id)} style={commonTheme}>
       <FilterList
@@ -47,41 +54,42 @@ const Item = ({ item, click, theme, t }) => {
         </div>
       )}
     </li>
-  )
-}
+  );
+};
 
-Item.prototype = {
-  item: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    phone: PropTypes.string,
-    email: PropTypes.string,
-    website: PropTypes.string,
-    username: PropTypes.string,
-    company: PropTypes.shape({
-      name: PropTypes.string,
-      catchPhrase: PropTypes.string,
-      bs: PropTypes.string
-    }),
-    address: PropTypes.shape({
-      street: PropTypes.string,
-      suite: PropTypes.string,
-      city: PropTypes.string,
-      zipcode: PropTypes.string,
-      geo: PropTypes.shape({
-        lat: PropTypes.string,
-        lng: PropTypes.string
-      })
-    })
-  }).isRequired,
-  t: PropTypes.func,
-  click: PropTypes.func,
-  theme: PropTypes.object
-}
+// Item.prototype = {
+//   item: PropTypes.shape({
+//     id: PropTypes.number,
+//     name: PropTypes.string,
+//     phone: PropTypes.string,
+//     email: PropTypes.string,
+//     website: PropTypes.string,
+//     username: PropTypes.string,
+//     company: PropTypes.shape({
+//       name: PropTypes.string,
+//       catchPhrase: PropTypes.string,
+//       bs: PropTypes.string
+//     }),
+//     address: PropTypes.shape({
+//       street: PropTypes.string,
+//       suite: PropTypes.string,
+//       city: PropTypes.string,
+//       zipcode: PropTypes.string,
+//       geo: PropTypes.shape({
+//         lat: PropTypes.string,
+//         lng: PropTypes.string
+//       })
+//     })
+//   }).isRequired,
+//   t: PropTypes.func,
+//   click: PropTypes.func,
+//   theme: PropTypes.object
+// }
 Item.defaultProps = {
   // * noop
   click: () => {},
   theme: {},
-  t: () => {}
-}
-export default translate()(Item)
+  t: id => {}
+};
+export default translate()(Item);
+/* jshint ignore:end */

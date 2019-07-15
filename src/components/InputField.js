@@ -1,16 +1,13 @@
-// @ts-check
+/* jshint ignore:start */
+// @flow
 import React from "react"
 import PropTypes from "prop-types"
 
-const InputField = ({ onChange, label }) => <input placeholder={label} onChange={onChange} />
-
-InputField.propsTypes = {
-  onChange: PropTypes.func.isRequired,
-  label: PropTypes.string
+type Props = {
+  onChange: () => {},
+  label: string
 }
-
-InputField.defaultProps = {
-  label: "Example input for testing"
-}
+const InputField = ({ onChange, label }: Props) => <input placeholder={label} onChange={onChange} />
 
 export default InputField
+/* jshint ignore:end */

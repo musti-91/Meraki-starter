@@ -1,7 +1,9 @@
-import React from "react"
-import { mount, shallow } from "enzyme"
+/* jshint ignore:start */
 
-import App from "../containers/App"
+import React from "react";
+import { mount, shallow } from "enzyme";
+
+import App from "../containers/App";
 /**
  * function
  * wrapper.setProps({ any: true})
@@ -11,19 +13,20 @@ import App from "../containers/App"
  * mount:> full dom render component
  */
 describe("App", () => {
-  const wrapper = shallow(<App />)
+  const wrapper = shallow(<App />);
 
   it("should render App", () => {
-    mount(<App />)
-  })
+    mount(<App />);
+  });
 
   it("should render App", () => {
-    const div = wrapper.find(".app")
+    const div = wrapper.find(".app");
 
-    expect(div.hasClass("app")).toBe(true)
-  })
+    expect(div.hasClass("app")).toBe(true);
+  });
 
   it("should match it's snapshot", () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});
+/** jshint ignore:end */

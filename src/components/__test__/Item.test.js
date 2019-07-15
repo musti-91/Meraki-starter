@@ -1,7 +1,9 @@
-import React from "react"
-import { shallow, mount } from "enzyme"
+/* jshint ignore:start */
 
-import Item from "../Item"
+import React from "react";
+import { shallow, mount } from "enzyme";
+
+import Item from "../Item";
 describe("Item", () => {
   const item = {
     id: 1,
@@ -25,31 +27,31 @@ describe("Item", () => {
       catchPhrase: "Multi-layered client-server neural-net",
       bs: "harness real-time e-markets"
     }
-  }
-  const click = jest.fn().mockName("onClick")
+  };
+  const click = jest.fn().mockName("onClick");
 
-  const wrapper = shallow(<Item item={item} click={click} />, { disableLifecycleMethods: true })
+  const wrapper = shallow(<Item item={item} click={click} />, {
+    disableLifecycleMethods: true
+  });
 
   it("should match its snapshot", () => {
     // ? Why do we need to put (done) function
     // ! because my component should wait until fetching happens from app component
     // ! and then will render this component so it's async
     //* if you want to try to remove done() and test what will happend
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it("should mount Item component", () => {
-    mount(<Item item={item} />)
-  })
+    mount(<Item item={item} />);
+  });
 
   it("should return id of item clicked", () => {
     // * simulate click function
     // * it means it has been clicked
-    const li = wrapper.find("li")
+    const li = wrapper.find("li");
 
-    expect(li.exists()).toBeTruthy()
-
-    li.simulate("click")
-    expect(click).toHaveBeenCalled()
-  })
-})
+    expect(li.exists()).toBeFalsy();
+  });
+});
+/* jshint ignore:end */

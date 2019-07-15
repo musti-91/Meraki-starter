@@ -1,7 +1,8 @@
-import Enzyme from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+/** jshint ignore:start */
+import Enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
-Enzyme.configure({ adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() });
 
 // // configure jsdom
 // const { window } = jsdom
@@ -22,3 +23,4 @@ Enzyme.configure({ adapter: new Adapter() })
 // 	global['window'].innerHeight = height || global['window'].innerHeight
 // 	global['window'].dispatchEvent(new Event('resize'))
 // }
+/** jshint ignore:end */

@@ -1,4 +1,5 @@
 // supportted languages English[Default] & Dutch
+/* jshint ignore:start */
 export default {
   en: {
     name: "Name",
@@ -22,4 +23,5 @@ export default {
     phone: "Telefoon",
     company: "bedrijf"
   }
-}
+};
+/* jshint ignore:end */
