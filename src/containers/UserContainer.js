@@ -35,7 +35,7 @@ const UserContanier = ({ users, fetchingError, startFetching, getUsers, getError
 
   const global_colors = {
     backgroundColor: lang == "nl" && "#A28B55",
-    color: lang == "nl" && "white"
+    color: lang == "nl" && "#ccc"
   }
 
   const colors = {

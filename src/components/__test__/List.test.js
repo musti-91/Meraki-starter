@@ -5,15 +5,13 @@ import List from "../List"
 
 describe("List", () => {
   const list = [{ name: "something", id: 2 }]
-  const wrapper = shallow(<List list={list} />)
+  const wrapper = shallow(<List list={list} />, { disableLifecycleMethods: true })
 
-  it("should render List", done => {
+  it("should render List", () => {
     mount(<List list={list} />)
-    done()
   })
 
-  it("should match snapshot", done => {
+  it("should match snapshot", () => {
     expect(wrapper).toMatchSnapshot()
-    done()
   })
 })
