@@ -57,38 +57,11 @@ const Item = ({ item, click, theme, t }: Props) => {
   );
 };
 
-// Item.prototype = {
-//   item: PropTypes.shape({
-//     id: PropTypes.number,
-//     name: PropTypes.string,
-//     phone: PropTypes.string,
-//     email: PropTypes.string,
-//     website: PropTypes.string,
-//     username: PropTypes.string,
-//     company: PropTypes.shape({
-//       name: PropTypes.string,
-//       catchPhrase: PropTypes.string,
-//       bs: PropTypes.string
-//     }),
-//     address: PropTypes.shape({
-//       street: PropTypes.string,
-//       suite: PropTypes.string,
-//       city: PropTypes.string,
-//       zipcode: PropTypes.string,
-//       geo: PropTypes.shape({
-//         lat: PropTypes.string,
-//         lng: PropTypes.string
-//       })
-//     })
-//   }).isRequired,
-//   t: PropTypes.func,
-//   click: PropTypes.func,
-//   theme: PropTypes.object
-// }
 Item.defaultProps = {
   // * noop
   click: () => {},
   theme: {},
+    // injected props from Language Provider
   t: id => {}
 };
 export default translate()(Item);

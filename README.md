@@ -9,26 +9,31 @@
 - Storybook
 - Jest-enzyme
 - Redux
--
+- Flow
+- Material Ui
 
 ## install
 
-`npm install`
+`npm install` or `yarn install`
 
 ## Start
 
-`npm start:dev`
+`npm start-dev` or `yarn start-dev`
 
 ## Build
 
-`npm run build`
+`npm run build` or `yarn run build`
 
 ## Storybook
 
-`npm run storybook`
+`npm run storybook` or `yarn run storybook`
 
 ## Test
 
 `npm run test`
-`npm run test:w`
-license: @Mustafa Alroomi
+`npm run test-wacth`
+ 
+ ## flow 
+ `npm run flow-watch` or `yarn flow-watch`
+
+license: MIT

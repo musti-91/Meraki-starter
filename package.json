@@ -6,20 +6,22 @@
   "scripts": {
     "clean-dist": "rm -f -r -d dist",
     "build": "webpack -p --env prod --config=config/prod.js",
+    "serve-build": "npm run clean-dist && npm run build && npx http-server dist",
     "start:prod": "npm run clean-dist && npm run build && webpack-dev-server",
-    "start:dev": "webpack-dev-server --port 3000 --env dev --config=config/dev.js --open",
+    "start-auto": "node src/__test__/AutoTest.js",
+    "start-dev": "webpack-dev-server --port 3000 --env dev --config=config/dev.js --open",
     "lint": "lint-staged .",
     "lint:fix": "eslint . --f",
     "test": "jest --coverage --colors",
-    "test:w": "jest --watch",
-    "flow:w": "flow .",
+    "test-watch": "jest --watch",
+    "flow-watch": "flow .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "precommit": "npm run test",
     "prepush": "npm run test"
   },
   "author": "Mustafa Alroomi",
-  "license": "ISC",
+  "license": "MIT",
   "lint-staged": {
     "*.{css,scss}": [
       "stylelint"
@@ -62,6 +64,7 @@
     "eslint-plugin-testcafe": "^0.2.1",
     "file-loader": "^4.0.0",
     "flow-bin": "^0.102.0",
+    "flow-typed": "^2.6.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
@@ -78,6 +81,7 @@
     "react-polyglot": "^0.4.1",
     "react-spring": "^8.0.27",
     "sass-loader": "^7.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.4",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
