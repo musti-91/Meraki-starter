@@ -3,8 +3,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import Item from "../Item";
-describe("Item", () => {
+import ListItem from "../ListItem";
+describe("components/ListItem", () => {
   const item = {
     id: 1,
     name: "Leanne Graham",
@@ -30,7 +30,7 @@ describe("Item", () => {
   };
   const click = jest.fn().mockName("onClick");
 
-  const wrapper = shallow(<Item item={item} click={click} />, {
+  const wrapper = shallow(<ListItem item={item} click={click} />, {
     disableLifecycleMethods: true
   });
 
@@ -40,10 +40,6 @@ describe("Item", () => {
     // ! and then will render this component so it's async
     //* if you want to try to remove done() and test what will happend
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should mount Item component", () => {
-    mount(<Item item={item} />);
   });
 
   it("should return id of item clicked", () => {

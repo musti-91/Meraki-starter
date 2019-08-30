@@ -4,8 +4,8 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import List from "../src/components/List";
-const stories = storiesOf("List", module);
+import {List} from "../src/components";
+const stories = storiesOf("Components/List", module);
 
 const dummyList = [
   {

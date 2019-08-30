@@ -1,7 +1,6 @@
 /* jshint ignore:start */
 // @flow
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { translate } from "react-polyglot";
 
 import Fab from "@material-ui/core/Fab";
@@ -16,7 +15,7 @@ type Props = {
   theme: any,
   t: (key: any) => any
 };
-const Item = ({ item, click, theme, t }: Props) => {
+const ListItem = ({ item, click, theme, t }: Props) => {
   const [resize, setResize] = useState(false);
   // TODO set animation for resize li
 
@@ -57,12 +56,5 @@ const Item = ({ item, click, theme, t }: Props) => {
   );
 };
 
-Item.defaultProps = {
-  // * noop
-  click: () => {},
-  theme: {},
-    // injected props from Language Provider
-  t: id => {}
-};
-export default translate()(Item);
+export default translate()(ListItem);
 /* jshint ignore:end */

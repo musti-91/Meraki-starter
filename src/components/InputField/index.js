@@ -1,7 +1,6 @@
 /* jshint ignore:start */
 // @flow
 import React from "react"
-import PropTypes from "prop-types"
 
 type Props = {
   onChange: () => {},

@@ -1,9 +1,9 @@
 /* jshint ignore:start */
 // @flow
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useTransition, animated } from "react-spring";
-import Item from "./Item";
+import Loader from "../Loader";
+import ListItem from "../ListItem";
 
 /**
  * @author
@@ -26,21 +26,12 @@ const List = ({ list, click, theme }: Props) => {
     <ul>
       {transitions.map(({ item, props, key }) => (
         <animated.div style={props} key={key}>
-          <Item item={item} click={click} theme={theme} />
+          <ListItem item={item} click={click} theme={theme} />
         </animated.div>
       ))}
     </ul>
   );
 };
-List.prototype = {
-  list: PropTypes.array.isRequired,
-  click: PropTypes.func,
-  theme: PropTypes.object
-};
-List.defaultProps = {
-  // * noop
-  click: () => {},
-  theme: {}
-};
-export default List;
+
+export default Loader()(List);
 /* jshint ignore:end */

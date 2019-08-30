@@ -1,0 +1,6 @@
+{
+  "tabWidth": 2,
+  "parser": "flow",
+  "trailingComma": "all",
+  "semi": true
+}

@@ -1,7 +1,6 @@
 /* jshint ignore:start */
 // @flow
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
   fetching,
@@ -9,13 +8,13 @@ import {
   fetchingSuccess,
   changeLang
 } from "../store/actions";
-import List from "../components/List";
+
+import { LangProvider, List } from '../components'
 import messages from "../utils/messages";
-import LangProvider from "../components/LangProvider";
 const fetch = require("node-fetch");
 /**
  * @author
- * @function UserContanier
+ * @function UserContainer
  **/
 
 type Props = {
@@ -27,7 +26,7 @@ type Props = {
   lang: string,
   changeLanguage: () => {}
 };
-const UserContanier = ({
+const UserContainer = ({
   users,
   fetchingError,
   startFetching,
@@ -86,23 +85,6 @@ const UserContanier = ({
   );
 };
 
-UserContanier.prototype = {
-  users: PropTypes.array,
-  fetchingError: PropTypes.any,
-  // actions
-  startFetching: PropTypes.func,
-  getUsers: PropTypes.func,
-  getError: PropTypes.func
-};
-
-UserContanier.defaultProps = {
-  users: [],
-  fetchingError: {},
-  // actions
-  startFetching: () => {}, // noop
-  getUsers: () => {},
-  getError: () => {}
-};
 
 const mapStateToProps = state => ({
   users: state.users.users,
@@ -120,5 +102,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserContanier);
+)(UserContainer);
 /* jshint ignore:end */

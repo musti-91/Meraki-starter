@@ -29,22 +29,5 @@ describe("App", () => {
   it("should match it's snapshot", () => {
     expect(wrapper).toMatchSnapshot();
   });
-  it('should find .App class', ()=> {
-    // const driver= new Builder().forBrowser('chrome').build()
-    // let langButton= null
-    // driver.get("http://10.150.144.5:8080")
-    // .then((res)=> {
-    //   console.log("Start Automated testing")
-    //   langButton= driver.findElement(By.className('lang_btn'))
-    //
-    //   langButton.click()
-    // })
-
-    // .catch(error => {
-    //   langButton= null
-    //   console.log(error)
-    // })
-
-  })
 });
 /** jshint ignore:end */
