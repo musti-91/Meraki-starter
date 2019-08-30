@@ -14,6 +14,7 @@
     "lint:fix": "eslint . --f",
     "test": "jest --coverage --colors",
     "test-watch": "jest --watch",
+    "build-coverage": "mv ./coverage/lcov-report ./dist/__coverage",
     "flow-watch": "flow .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
