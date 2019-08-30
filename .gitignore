@@ -8,4 +8,11 @@ yarn-error.log
 #  testing
 .coverage/
 coverage/
+<<<<<<< HEAD
 
+=======
+snapshot/
+__snapshots__/
+# idea
+.idea/
+>>>>>>> dev
